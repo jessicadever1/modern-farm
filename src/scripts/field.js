@@ -1,5 +1,5 @@
-import { plantSeeds } from './tractor.js'
-const plantedSeeds = plantSeeds()
+// import { plantSeeds } from './tractor.js'
+// const plantedSeeds = plantSeeds()
 
 const plantsInField = []
 
@@ -11,7 +11,7 @@ export const addPlant = (seedObjectPlaceholder) => {
         plantsInField.push(seedObjectPlaceholder)
     }
 }
-addPlant(plantedSeeds)
+// addPlant(plantedSeeds)
 
 export const usePlants = () => {
     return plantsInField.slice();

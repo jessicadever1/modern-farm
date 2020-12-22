@@ -2,7 +2,8 @@ export const createCorn = () => {
 
     const corn = [
 
-    /* The instructions say to return a value of two arrays, the arrays consist of two objects. Do I need to name these objects?*/
+    /* The instructions say to return a value of two arrays, 
+    the arrays consist of two objects. Do I need to name these objects?*/
 
         {
             type: "corn",

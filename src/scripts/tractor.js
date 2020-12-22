@@ -1,35 +1,44 @@
-import { createPlan } from './plan.js';
+import { addPlant, usePlants } from './field.js';
 import { createAsparagus } from './seeds/asparagus.js';
 import { createCorn } from './seeds/corn.js';
 import { createPotato } from './seeds/potato.js';
 import { createSoybean } from './seeds/soybean.js';
 import { createSunflower } from './seeds/sunflower.js';
 import { createWheat } from './seeds/wheat.js'
-const yearlyPlan = createPlan();
 
-export const plantSeeds = (plantingPlanPlaceholder) => {
-    for (let i = 0; i < plantingPlanPlaceholder.length; i++) {
-        for (let j = 0; j < plantingPlanPlaceholder[i].length; j++) {
-            let seed = {}
-            if (plantingPlanPlaceholder[i][j] = "Asparagus") {
-                seed = createAsparagus()
-            } else if (plantingPlanPlaceholder[i][j] = "Corn") {
-                seed = createCorn()
-            } else if (plantingPlanPlaceholder[i][j] = "Potato") {
-                seed = createPotato()
-            } else if (plantingPlanPlaceholder[i][j] = "Soybean") {
-                seed = createSoybean()
-            } else if (plantingPlanPlaceholder[i][j] = "Sunflower") {
-                seed = createSunflower()
-            } else if (plantingPlanPlaceholder[i][j] = "Wheat") {
-                seed = createWheat()
+
+
+export const plantSeeds = (plantingPlan) => { //the plantingPlan needs to be an array
+    //let plants = usePlants()
+    for (const i of plantingPlan) {
+        for (const j of i) {
+            
+            if (j === "Asparagus") {
+                const asparagus =  createAsparagus()
+                addPlant(asparagus)
+            } else if (j === "Corn") {
+                const corn = createCorn()
+                addPlant(corn)
+            } else if (j === "Potato") {
+                const potato = createPotato()
+                addPlant(potato)
+            } else if (j === "Soybean") {
+                const soybean = createSoybean()
+                addPlant(soybean)
+            } else if (j === "Sunflower") {
+                const sunflower = createSunflower()
+                addPlant(sunflower)
+            } else if (j === "Wheat") {
+                const wheat = createWheat()
+                addPlant(wheat)
             }
-        return seed
+        
         }
+        //return plants    
     }
+   return plantingPlan 
 }
 
-plantSeeds(yearlyPlan);
 
 /*
 we neeed to get the yearly plan.
